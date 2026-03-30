@@ -9,5 +9,5 @@ import { RestaurantMenuComponent } from "./restaurant-menu/restaurant-menu";
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('my-app');
+  title = 'Gourmet Bistro';
 }
