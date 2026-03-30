@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { DishRecipeComponent } from '../dish-recipe/dish-recipe';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-restaurant-menu',
-  imports: [DishRecipeComponent],
+  imports: [DishRecipeComponent, NgOptimizedImage],
   templateUrl: './restaurant-menu.html',
   styleUrl: './restaurant-menu.css',
 })
