@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { DishRecipeComponent } from '../dish-recipe/dish-recipe';
 
 @Component({
   selector: 'app-restaurant-menu',
-  imports: [],
+  imports: [DishRecipeComponent],
   templateUrl: './restaurant-menu.html',
   styleUrl: './restaurant-menu.css',
 })
