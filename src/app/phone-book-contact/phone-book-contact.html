@@ -2,7 +2,7 @@
   <app-contact-fav-button class="contact__favorite" [(favorite)]="contact.favorite" />
   <div class="contact__info">
     <p>Name:</p>
-    <p>{{ contact.name }}</p>
+    <p>{{ contact.name | titlecase }}</p>
   </div>
   <div class="contact__info">
     <p>Number:</p>
