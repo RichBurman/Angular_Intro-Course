@@ -51,7 +51,8 @@ export class PhoneBook {
   date = new Date()
   favoriteShade = "#D1FFFB"
 
-  onFavoriteShadeChange() {
-    // handle `favoriteShade` change
+  onFavoriteShadeChange($event: Event) {
+    const target = $event.target as HTMLInputElement;
+    this.favoriteShade = target.value;
   }
 }

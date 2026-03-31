@@ -9,7 +9,7 @@
       <span>
         <label for="color">Favorite Shade: {{ favoriteShade }} </label>
         <!-- Add event binding with to input tag -->
-        <input type="color" name="color" id="color" [value]="favoriteShade"/>
+        <input type="color" name="color" id="color" [value]="favoriteShade" (change)="onFavoriteShadeChange($event)"/>
       </span>
     </div>
 
