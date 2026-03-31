@@ -1,12 +1,21 @@
-import { Directive, Input, ElementRef } from "@angular/core";
+import { Directive, Input, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: "[appCopy]",
+  selector: '[appCopy]',
+  host: {
+    '(click)': 'copy()'
+  }
 })
 export class AppCopyDirective {
-  @Input() appCopy = "";
+  @Input() appCopy = '';
   constructor(private element: ElementRef) {
-    this.element.nativeElement.style.textDecoration = "underline";
-    this.element.nativeElement.style.cursor = "pointer";
+      this.element.nativeElement.style.textDecoration = 'underline';
+      this.element.nativeElement.style.cursor = 'pointer';
+   }
+
+  copy() {
+    navigator.clipboard.writeText(this.appCopy);
+    alert('Copied');
   }
+
 }
