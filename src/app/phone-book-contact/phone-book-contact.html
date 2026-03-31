@@ -1,0 +1,11 @@
+<div class="contact"> <!-- "apply favorite" styling-->
+  <app-contact-fav-button class="contact__favorite" [favorite]="contact.favorite" />
+  <div class="contact__info">
+    <p>Name:</p>
+    <p>{{ contact.name  }}</p>
+  </div>
+  <div class="contact__info">
+    <p>Number:</p>
+    <p> {{ contact.phoneNumber}}</p>
+  </div>
+</div>

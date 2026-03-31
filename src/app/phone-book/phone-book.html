@@ -1,0 +1,25 @@
+<main class="phone-book">
+  <header>
+    <h1>Phone Book</h1>
+  </header>
+
+  <section class="contacts">
+    <div class="contacts__title">
+      <h3>Contacts ({{ contacts.length}})</h3>
+      <span>
+        <label for="color">Favorite Shade: {{ favoriteShade }} </label>
+        <!-- Add event binding with to input tag -->
+        <input type="color" name="color" id="color" [value]="favoriteShade"/>
+      </span>
+    </div>
+
+    <div class="contacts__container">
+      @for (contact of contacts; track contact.id) {
+        <app-phone-book-contact [favoriteShade]="favoriteShade" [contact]="contact"/>
+      }
+      @if (contacts.length === 0) {
+        <p>No contacts yet!</p>
+      }
+    </div>
+  </section>
+</main>
