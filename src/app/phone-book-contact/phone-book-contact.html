@@ -1,4 +1,4 @@
-<div class="contact">
+<div class="contact"[ngStyle]="{'background-color': contact.favorite ? favoriteShade : null}"> 
   <app-contact-fav-button class="contact__favorite" [(favorite)]="contact.favorite" />
   <div class="contact__info">
     <p>Name:</p>
