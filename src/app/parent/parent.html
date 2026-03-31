@@ -4,4 +4,48 @@
     <p>Count value in parent component: {{ countValue }}</p>
   </div>
   <app-counter [count]="countValue" (countIncremented)="onCountIncremented($event)"></app-counter>
+<div class="notes">
+  <h2>@Input & @Output — How data flows</h2>
+
+  <p><strong>Golden rule:</strong> think from the child's perspective.</p>
+  <ul>
+    <li><code>@Input</code> — data coming IN to the child (parent → child)</li>
+    <li><code>@Output</code> — events going OUT from the child (child → parent)</li>
+  </ul>
+
+  <h3>Step 1 — @Input</h3>
+  <p>Square brackets pass data down into the child. The child declares <code>@Input() count</code> to receive it.</p>
+  <pre>
+app.component.html
+&lt;app-counter [count]="countValue"&gt;&lt;/app-counter&gt;
+
+counter.component.ts
+@Input() count: number = 0;
+  </pre>
+
+  <h3>Step 2 — @Output</h3>
+  <p>The child calls emit() to fire an event upward. It cannot change the parent's data directly.</p>
+  <pre>
+counter.component.ts
+@Output() countIncremented = new EventEmitter&lt;number&gt;();
+
+increment() &#123;
+  this.count++;
+  this.countIncremented.emit(this.count);
+&#125;
+  </pre>
+
+  <h3>Step 3 — Parent reacts</h3>
+  <p>Round brackets listen for the event. $event carries the emitted value. The parent updates its own data, which flows back down via @Input.</p>
+  <pre>
+app.component.html
+&lt;app-counter (countIncremented)="onCountIncremented($event)"&gt;&lt;/app-counter&gt;
+
+app.component.ts
+onCountIncremented(newCount: number) &#123;
+  this.countValue = newCount;
+&#125;
+  </pre>
+
+  <p><strong>Summary:</strong> The parent owns the data. The child displays it via @Input and requests changes via @Output.</p>
 </div>
