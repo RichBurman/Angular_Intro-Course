@@ -5,7 +5,9 @@
 
   <section class="contacts">
     <div class="contacts__title">
-      <h3>Contacts ({{ contacts.length}})</h3>
+      <h3>
+        {{ contacts.length}} contacts, {{ contacts | favoriteCount}} favorites
+      </h3>
       <span>
         <label for="color">Favorite Shade: {{ favoriteShade }} </label>
         <!-- Add event binding with to input tag -->

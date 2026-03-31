@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PhoneBookContact } from '../phone-book-contact/phone-book-contact';
-
+import { FavoriteCountPipe } from '../favorite-count.pipe';
 export interface Contact {
   id: string,
   name: string,
@@ -10,7 +10,7 @@ export interface Contact {
 
 @Component({
   selector: 'app-phone-book',
-  imports: [PhoneBookContact],
+  imports: [PhoneBookContact, FavoriteCountPipe],
   templateUrl: './phone-book.html',
   styleUrl: './phone-book.css',
 })

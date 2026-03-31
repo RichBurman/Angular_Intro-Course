@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-contact-fav-button',
@@ -10,10 +10,11 @@ export class ContactFavButton {
 
   @Input() favorite: boolean = false
   // two-way bind `favorite`
-
-  // Host element bind `click` event
+  @Output() favoriteChange = new EventEmitter<boolean>();
+  
 
   toggle() {
     this.favorite = !this.favorite
+    this.favoriteChange.emit(this.favorite);
   }
 }
