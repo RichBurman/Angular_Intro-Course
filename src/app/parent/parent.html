@@ -1,0 +1,7 @@
+<div class="app">
+  <h1>Counter Application</h1>
+  <div class="parent-counter">
+    <p>Count value in parent component: {{ countValue }}</p>
+  </div>
+  <app-counter [count]="countValue" (countIncremented)="onCountIncremented($event)"></app-counter>
+</div>
